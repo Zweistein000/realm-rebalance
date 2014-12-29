@@ -104,7 +104,7 @@
   ],
   "navigation": {
     "move_speed": 28,
-    "type": "land-small",
+    "type": "amphibious",
     "turn_speed": 720,
     "brake": 200,
     "acceleration": 200

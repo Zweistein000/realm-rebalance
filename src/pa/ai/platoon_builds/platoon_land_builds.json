@@ -4,12 +4,6 @@
 		"to_build": "Land_Scout",
 		"instance_count": -1,
 		"priority": 100,
-		"build_conditions": [[{
-			"test_type": "UnitCountOnPlanet",
-			"unit_type_string0": "Air & Factory",
-			"compare0": "<",
-			"value0": 1
-		},
 		{
 			"test_type": "UnitPoolCount",
 			"unit_type_string0": "Land & Scout",

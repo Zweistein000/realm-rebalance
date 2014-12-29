@@ -30,7 +30,7 @@
       "UNITTYPE_Structure",
       "UNITTYPE_Defense",
       "UNITTYPE_NukeDefense",
-      "UNITTYPE_Advanced",
+      "UNITTYPE_Basic",
       "UNITTYPE_Factory",
       "UNITTYPE_FabAdvBuild"
    ],

@@ -21,7 +21,7 @@
     "ORDER_Attack"
   ],
   "guard_radius": 510,
-  "guard_layer": "WL_AnySurface",
+  "guard_layer": "WL_Orbital",
   "recon": {
     "observer": {
       "items": [
@@ -30,6 +30,12 @@
           "channel": "sight",
           "shape": "capsule",
           "radius": 100
+        },
+        {
+          "layer": "orbital",
+          "channel": "sight",
+          "shape": "capsule",
+          "radius": 200
         }
       ]
     }
@@ -62,12 +68,11 @@
       "spec_id": "/pa/units/land_combat/tactical_missile_launcher/tactical_missile_launcher_tool_weapon.json",
       "aim_bone": "bone_missile01",
       "muzzle_bone": "bone_missile01"
-    },
-    {
-      "death_weapon": true,
-      "spec_id": "/pa/units/land_combat/tactical_missile_launcher/tactical_missile_launcher_tool_death.json"
     }
   ],
+   "death_weapon": {
+    "ground_ammo_spec": "/pa/ammo/self_destruct/com_death_ground.json"
+  }, 
   "events": {
     "build_complete": {
       "audio_cue": "/SE/Build_Complete/factory"

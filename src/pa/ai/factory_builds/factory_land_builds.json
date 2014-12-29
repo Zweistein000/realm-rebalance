@@ -314,16 +314,13 @@
 		"instance_count": 1,
 		"shared_instance_count": "LandScout",
 		"priority": 98,
-		"builders": ["BasicVehicleFactory"],
+		"builders": [
+			"BasicVehicleFactory", 
+			"BasicBotFactory"
+			],
 		"build_conditions": [[{
 			"test_type": "BaseThreatened",
 			"boolean": false
-		},
-		{
-			"test_type": "UnitCountOnPlanet",
-			"unit_type_string0": "Air & Factory",
-			"compare0": "<",
-			"value0": 1
 		},
 		{
 			"test_type": "UnitCountPerPlanetRadius",
@@ -338,12 +335,6 @@
 		[{
 			"test_type": "BaseThreatened",
 			"boolean": false
-		},
-		{
-			"test_type": "UnitCountOnPlanet",
-			"unit_type_string0": "Air & Factory",
-			"compare0": "<",
-			"value0": 1
 		},
 		{
 			"test_type": "UnitCountOnPlanet",
@@ -362,7 +353,10 @@
 		"instance_count": 1,
 		"shared_instance_count": "LandScout",
 		"priority": 97,
-		"builders": ["BasicVehicleFactory"],
+		"builders": [
+			"BasicVehicleFactory", 
+			"BasicBotFactory"
+			],
 		"build_conditions": [[{
 			"test_type": "AloneOnPlanet",
 			"boolean": false

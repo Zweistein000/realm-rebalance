@@ -16,8 +16,12 @@
   "firing_arc_yaw": 180,
   "firing_arc_pitch": 180,
   "auto_attack": true,
+   "target_priorities": [
+    "Orbital"
+  ],
   "target_layers": [
     "WL_LandHorizontal",
+    "WL_Orbital",
     "WL_WaterSurface"
   ]
 }

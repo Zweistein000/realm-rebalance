@@ -8,7 +8,7 @@
     "UNITTYPE_Bomber",
     "UNITTYPE_Mobile",
     "UNITTYPE_Air",
-    "UNITTYPE_Basic",
+    "UNITTYPE_Advanced",
     "UNITTYPE_FactoryBuild"
   ],
   "guard_radius": 200,

@@ -4,10 +4,10 @@
   "description": "Observation Tower: sees all in a moderate radius",
   "display_group": 50,
   "display_index": 100,
-  "max_health": 1500,
-  "build_metal_cost": 500,
+  "max_health": 1000,
+  "build_metal_cost": 1000,
   "consumption": {
-    "energy": 1500
+    "energy": 2000
   },
   "energy_efficiency_requirement": 0.9,
   "atrophy_rate": 20,
