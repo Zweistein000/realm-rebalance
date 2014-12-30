@@ -16,6 +16,9 @@
   "base_spec": "/pa/units/surfacenaval_units/base_ship/base_ship.json",
   "build_metal_cost": 3500,
   "description": "Heavy Assault Ship: A battleship with long-range cannons. Uses energy. Weak vs Heavy-Hitters & Long-Range",
+   "consumption": {
+    "energy": 2000
+  },
   "display_group": 20,
   "display_index": 100,
   "display_name": "Leviathan",
@@ -50,7 +53,7 @@
     }
   },
   "guard_layer": "WL_LandHorizontal",
-  "max_health": 9500,
+  "max_health": 9000,
   "mesh_bounds": [
     12,
     90,
@@ -79,9 +82,16 @@
     "observer": {
       "items": [
         {
+          "channel": "radar",
+          "layer": "surface_and_air",
+          "radius": 250,
+          "shape": "capsule",
+          "uses_energy": true
+        },
+        {
           "channel": "sight",
           "layer": "surface_and_air",
-          "radius": 200,
+          "radius": 100,
           "shape": "capsule"
         }
       ]
