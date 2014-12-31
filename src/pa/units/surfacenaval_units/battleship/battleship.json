@@ -19,6 +19,7 @@
    "consumption": {
     "energy": 2000
   },
+   "energy_efficiency_requirement": 0.9,
   "display_group": 20,
   "display_index": 100,
   "display_name": "Leviathan",
@@ -84,16 +85,23 @@
         {
           "channel": "radar",
           "layer": "surface_and_air",
-          "radius": 250,
+          "radius": 400,
           "shape": "capsule",
           "uses_energy": true
         },
         {
           "channel": "sight",
           "layer": "surface_and_air",
-          "radius": 100,
+          "radius": 85,
           "shape": "capsule"
-        }
+        },
+        {
+          "channel": "radar", 
+          "layer": "orbital", 
+          "radius": 400, 
+          "shape": "capsule", 
+          "uses_energy": true
+        } 
       ]
     }
   },

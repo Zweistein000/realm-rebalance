@@ -92,15 +92,14 @@ function BuildHotkeyModel() {
             "/pa/units/air/fabrication_aircraft/fabrication_aircraft.json": ["air", 10],
             "/pa/units/air/fighter/fighter.json": ["air", 11],
             "/pa/units/air/bomber/bomber.json": ["air", 12],
-		"/pa/units/air/bomber_torpedo/bomber_torpedo.json": ["air", 13],
-            "/pa/units/air/transport/transport.json": ["air", 14],
+            "/pa/units/air/transport/transport.json": ["air", 13],
             "/pa/units/air/air_scout/air_scout.json": ["air", 6],
 
             "/pa/units/air/fabrication_aircraft_adv/fabrication_aircraft_adv.json": ["advAir", 10],
             "/pa/units/air/fighter_antiair/fighter_antiair.json": ["advAir", 11],
             "/pa/units/air/bomber_adv/bomber_adv.json": ["advAir", 12],
             "/pa/units/air/gunship/gunship.json": ["advAir", 13],
-
+			"/pa/units/air/bomber_torpedo/bomber_torpedo.json": ["advAir", 14],
 
             "/pa/units/surfacenaval_units/fabrication_ship/fabrication_ship.json": ["naval", 10],
             "/pa/units/surfacenaval_units/sea_scout/sea_scout.json": ["naval", 11],

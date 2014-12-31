@@ -38,11 +38,7 @@
   "display_index": 100,
   "max_health": 1000,
   "build_metal_cost": 650,
-  "description": "Anti-air Radar Ship: Frigate with light cannon & missiles. Uses energy. Weak vs Assault & Heavy",
-  "consumption": {
-    "energy": 200
-  },
-  "energy_efficiency_requirement": 0.9,
+  "description": "Anti-air Riot-Control Ship: Frigate with light flak cannon & missiles. Weak vs Assault & Heavy",
   "recon": {
     "observer": {
       "items": [
@@ -51,13 +47,6 @@
           "layer": "surface_and_air",
           "shape": "capsule",
           "channel": "sight"
-        },
-        {
-          "layer": "surface_and_air",
-          "channel": "radar",
-          "shape": "capsule",
-          "radius": 325,
-          "uses_energy": true
         }
       ]
     }
@@ -71,7 +60,7 @@
   },
   "tools": [
     {
-      "spec_id": "/pa/units/surfacenaval_units/frigate/frigate_cannon_tool_weapon.json",
+      "spec_id": "/pa/units/surfacenaval_units/frigate/frigate_flak_tool_weapon.json",
       "fire_event": "fired0",
       "aim_bone": "bone_pitch01",
       "muzzle_bone": [
@@ -84,6 +73,13 @@
       "muzzle_bone": [
         "socket_rightMuzzle02",
         "socket_leftMuzzle02"
+      ]
+    },
+    {
+      "spec_id": "/pa/units/surfacenaval_units/frigate/frigate_antimissile_tool_weapon.json",
+      "aim_bone": "bone_pitch01",
+      "muzzle_bone": [
+        "socket_muzzle01"
       ]
     }
   ],
@@ -102,7 +98,6 @@
     "UNITTYPE_Mobile",
     "UNITTYPE_Basic",
     "UNITTYPE_AirDefense",
-    "UNITTYPE_Recon",
     "UNITTYPE_FactoryBuild"
   ]
 }
