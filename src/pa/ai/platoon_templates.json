@@ -104,7 +104,7 @@
       "units": [
         {
           "max_count": -1, 
-          "min_count": 1, 
+          "min_count": 5, 
           "unit_types": "Bot & Bomb"
         }
       ]
