@@ -24,7 +24,7 @@
       "builders": [
         "AnyBasicFabber"
       ], 
-      "instance_count": 2, 
+      "instance_count": 3, 
       "name": "Basic Metal Extractor - Area", 
       "placement_rules": {
         "placement_type": "FromMainBaseCenter", 
@@ -62,7 +62,7 @@
       "builders": [
         "AnyBasicFabber"
       ], 
-      "instance_count": 2, 
+      "instance_count": 3, 
       "name": "Basic Metal Extractor - Desire - Area", 
       "placement_rules": {
         "placement_type": "FromMainBaseCenter", 
@@ -100,7 +100,7 @@
       "builders": [
         "AnyBasicFabber"
       ], 
-      "instance_count": 2, 
+      "instance_count": 3, 
       "name": "Basic Metal Extractor - Expand - Area", 
       "placement_rules": {
         "placement_type": "FromMainBaseCenter", 
@@ -138,7 +138,7 @@
       "builders": [
         "AnyBasicFabber"
       ], 
-      "instance_count": 2, 
+      "instance_count": 3, 
       "name": "Basic Metal Extractor - Expand 2 - Area", 
       "placement_rules": {
         "placement_type": "FromMainBaseCenter", 
@@ -172,7 +172,7 @@
       "builders": [
         "AnyBasicFabber"
       ], 
-      "instance_count": 2, 
+      "instance_count": 3, 
       "name": "Basic Metal Extractor", 
       "placement_rules": {
         "placement_type": "FromMainBaseCenter", 
@@ -203,7 +203,7 @@
       "builders": [
         "AnyBasicFabber"
       ], 
-      "instance_count": 2, 
+      "instance_count": 3, 
       "name": "Basic Metal Extractor - Desire", 
       "placement_rules": {
         "placement_type": "FromMainBaseCenter", 
@@ -234,7 +234,7 @@
       "builders": [
         "AnyBasicFabber"
       ], 
-      "instance_count": 2, 
+      "instance_count": 3, 
       "name": "Basic Metal Extractor - Expand", 
       "placement_rules": {
         "placement_type": "FromMainBaseCenter", 
@@ -265,7 +265,7 @@
       "builders": [
         "AnyBasicFabber"
       ], 
-      "instance_count": 2, 
+      "instance_count": 3, 
       "name": "Basic Metal Extractor - Expand 2", 
       "placement_rules": {
         "placement_type": "FromMainBaseCenter", 
@@ -309,7 +309,7 @@
       "builders": [
         "AnyBasicFabber"
       ], 
-      "instance_count": 1, 
+      "instance_count": 2, 
       "max_num_assisters": 1, 
       "name": "Basic Energy Generator", 
       "placement_rules": {
@@ -353,7 +353,7 @@
       "builders": [
         "AnyBasicFabber"
       ], 
-      "instance_count": 1, 
+      "instance_count": 2, 
       "max_num_assisters": 3, 
       "name": "Basic Energy Generator - Desire", 
       "placement_rules": {
@@ -547,8 +547,8 @@
         "AnyAdvancedFabber"
       ], 
       "instance_count": 1, 
-      "max_num_assisters": 5, 
-      "min_num_assisters": 2, 
+      "max_num_assisters": 6, 
+      "min_num_assisters": 3, 
       "name": "Advanced Energy Generator - Desire", 
       "placement_rules": {
         "buffer": 10, 
@@ -636,65 +636,50 @@
       "priority": 140, 
       "to_build": "MetalStorage"
     },
-	{
-       "name": "Solar Array",
-        "to_build": "SolarArray",
-        "instance_count": 1,
-        "priority": 195,
-        "builders": [
-			"AnyBasicFabber", 
-			"AnyAdvancedFabber"
-        ], 
-        "build_conditions": [
-            [
-                {
-                    "test_type": "PotentialEnergyEfficiency",
-                    "compare0": "<",
-                    "value0": 1
-                },
-                {
-                    "test_type": "CanAffordBuildDemand"
-                }
-            ],
-            [
-                {
-                    "test_type": "DesireEnergy"
-                },
-                {
-                    "test_type": "CanAffordBuildDemand"
-                }
-            ]
+    {
+      "build_conditions": [
+        [
+          {
+            "compare0": "<", 
+            "test_type": "PotentialEnergyEfficiency", 
+            "value0": 1.0
+          }
         ]
-    },
-	{
-       "name": "Orbital Jig",
-        "to_build": "OrbitalJig",
-        "instance_count": 1,
-        "priority": 195,
-        "builders": [
-			"AnyBasicFabber", 
-			"AnyAdvancedFabber"
-        ], 
-        "build_conditions": [
-            [
-                {
-                    "test_type": "PotentialEnergyEfficiency",
-                    "compare0": "<",
-                    "value0": 1
-                },
-                {
-                    "test_type": "CanAffordBuildDemand"
-                }
-            ],
-            [
-                {
-                    "test_type": "DesireEnergy"
-                },
-                {
-                    "test_type": "CanAffordBuildDemand"
-                }
-            ]
+      ], 
+      "builders": [
+        "OrbitalFabber"
+      ], 
+      "instance_count": 1, 
+      "name": "Jig", 
+      "placement_rules": {
+        "buffer": 5
+      }, 
+      "priority": 270, 
+      "shared_instance_count": "OrbitalEnergy", 
+      "to_build": "OrbitalJig"
+    }, 
+    {
+      "build_conditions": [
+        [
+          {
+            "compare0": "<", 
+            "test_type": "PotentialEnergyEfficiency", 
+            "value0": 1.0
+          }
         ]
+      ], 
+      "builders": [
+        "OrbitalFabber"
+      ], 
+      "instance_count": 2, 
+      "max_num_assisters": 1, 
+      "name": "Solar Energy Generator", 
+      "placement_rules": {
+        "buffer": 5
+      },  
+      "priority": 260, 
+      "shared_instance_count": "OrbitalEnergy", 
+      "to_build": "SolarArray"
     }
   ]
 }

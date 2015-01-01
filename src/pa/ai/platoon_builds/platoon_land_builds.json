@@ -1,17 +1,22 @@
 {
-	"build_list": [{
-		"name": "Land Scout Platoon",
-		"to_build": "Land_Scout",
-		"instance_count": -1,
-		"priority": 100,
-		{
-			"test_type": "UnitPoolCount",
-			"unit_type_string0": "Land & Scout",
-			"compare0": ">=",
-			"value0": 1
-		}]],
-		"task_type": "Scout"
-	},
+	"build_list": [
+        {
+            "name": "Land Scout Platoon",
+            "to_build": "Land_Scout",
+            "instance_count": 5,
+            "priority": 100,
+            "build_conditions": [
+                [
+                    {
+                        "test_type": "UnitPoolCount",
+                        "unit_type_string0": "Land & Scout",
+                        "compare0": ">=",
+                        "value0": 1
+                    }
+                ]
+            ],
+            "task_type": "Scout"
+        },
 	{
 		"name": "Land Transfer To Planet",
 		"to_build": "Land_Attack_XLarge",

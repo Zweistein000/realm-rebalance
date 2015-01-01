@@ -138,64 +138,6 @@
       "priority": 479, 
       "to_build": "OrbitalFactory"
     }, 
-
-    {
-      "build_conditions": [
-        [
-          {
-            "test_type": "CanAffordBuildDemand"
-          }, 
-          {
-            "compare0": ">", 
-            "string0": "Orbital", 
-            "test_type": "SystemThreat", 
-            "value0": 0
-          }, 
-          {
-            "compare0": "<", 
-            "test_type": "UnitCountInBase", 
-            "unit_type_string0": "Orbital & OrbitalDefense", 
-            "value0": 4
-          }, 
-          {
-            "compare0": ">=", 
-            "test_type": "UnitCountInBase", 
-            "unit_type_string0": "Structure & ((EnergyProduction & Advanced) | Factory)", 
-            "value0": 3
-          }, 
-          {
-            "string0": "DefenseSatellite", 
-            "test_type": "CanFindPlaceToBuild"
-          }
-        ]
-      ], 
-      "builders": [
-        "OrbitalFabber"
-      ], 
-      "instance_count": 1, 
-      "name": "Defense Satellite", 
-      "placement_rules": {
-        "placement_type": "FromMainBaseCenter", 
-        "unit_count_rules": [
-          {
-            "alliance": "Ally", 
-            "compare_type": ">=", 
-            "count": 1, 
-            "range": 50, 
-            "unit_type_string": "Orbital & (EnergyProduction | Recon)"
-          }, 
-          {
-            "alliance": "Ally", 
-            "compare_type": "<", 
-            "count": 1, 
-            "range": 20, 
-            "unit_type_string": "Orbital & OrbitalDefense"
-          }
-        ]
-      }, 
-      "priority": 196, 
-      "to_build": "DefenseSatellite"
-    }, 
     {
       "build_conditions": [
         [

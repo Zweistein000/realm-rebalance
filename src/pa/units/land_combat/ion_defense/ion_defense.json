@@ -129,7 +129,8 @@
     "UNITTYPE_Basic", 
     "UNITTYPE_Defense", 
     "UNITTYPE_OrbitalDefense", 
-    "UNITTYPE_FabBuild", 
-    "UNITTYPE_FabAdvBuild"
+    "UNITTYPE_CmdBuild",
+    "UNITTYPE_FabBuild",
+	"UNITTYPE_CombatFabAdvBuild"
   ]
 }

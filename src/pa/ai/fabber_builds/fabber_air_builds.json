@@ -289,8 +289,8 @@
         "AdvancedAirFabber"
       ], 
       "instance_count": 1, 
-      "max_num_assisters": 5, 
-      "min_num_assisters": 3, 
+      "max_num_assisters": 10, 
+      "min_num_assisters": 5, 
       "name": "Advanced Air Factory", 
       "placement_rules": {
         "buffer": 15, 

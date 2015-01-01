@@ -150,6 +150,9 @@
       "radius": 6.0
     }
   ], 
+    "death_weapon": {
+        "ground_ammo_spec": "/pa/ammo/nuke_pbaoe/nuke_orbitalpbaoe.json"
+    },
   "max_health": 7500, 
   "mesh_bounds": [
     50, 

@@ -308,19 +308,108 @@
 			"value0": 0
 		}]]
 	},
+    {
+      "build_conditions": [
+        [
+          {
+            "boolean": false, 
+            "test_type": "BaseThreatened"
+          }, 
+          {
+            "compare0": "<", 
+            "test_type": "UnitCountPerPlanetRadius", 
+            "unit_type_string0": "Land & Scout", 
+            "value0": 400
+          }, 
+          {
+            "boolean": false, 
+            "test_type": "HaveFullPlanetIntel"
+          }
+        ], 
+        [
+          {
+            "boolean": false, 
+            "test_type": "BaseThreatened"
+          }, 
+          {
+            "compare0": "<", 
+            "test_type": "UnitCountOnPlanet", 
+            "unit_type_string0": "Land & Scout", 
+            "value0": 1
+          }, 
+          {
+            "boolean": false, 
+            "test_type": "HaveFullPlanetIntel"
+          }
+        ]
+      ], 
+      "builders": [
+        "BasicBotFactory"
+      ], 
+      "instance_count": 1, 
+      "name": "Bot Scout", 
+      "priority": 98, 
+      "to_build": "BasicAssaultBot"
+    }, 
+    {
+      "build_conditions": [
+        [
+          {
+            "boolean": false, 
+            "test_type": "BaseThreatened"
+          }, 
+          {
+            "compare0": "<", 
+            "test_type": "UnitCountPerPlanetRadius", 
+            "unit_type_string0": "Land & Scout", 
+            "value0": 400
+          }, 
+          {
+            "boolean": false, 
+            "test_type": "HaveFullPlanetIntel"
+          }
+        ], 
+        [
+          {
+            "boolean": false, 
+            "test_type": "BaseThreatened"
+          }, 
+          {
+            "compare0": "<", 
+            "test_type": "UnitCountOnPlanet", 
+            "unit_type_string0": "Land & Scout", 
+            "value0": 1
+          }, 
+          {
+            "boolean": false, 
+            "test_type": "HaveFullPlanetIntel"
+          }
+        ]
+      ], 
+      "builders": [
+        "BasicVehicleFactory"
+      ], 
+      "instance_count": 1, 
+      "name": "Vehicle Scout", 
+      "priority": 98, 
+      "to_build": "LandScout"
+    }, 
 	{
 		"name": "Land Scout - Intel",
 		"to_build": "LandScout",
 		"instance_count": 1,
 		"shared_instance_count": "LandScout",
 		"priority": 98,
-		"builders": [
-			"BasicVehicleFactory", 
-			"BasicBotFactory"
-			],
+		"builders": ["BasicVehicleFactory"],
 		"build_conditions": [[{
 			"test_type": "BaseThreatened",
 			"boolean": false
+		},
+		{
+			"test_type": "UnitCountOnPlanet",
+			"unit_type_string0": "Air & Factory",
+			"compare0": "<",
+			"value0": 1
 		},
 		{
 			"test_type": "UnitCountPerPlanetRadius",
@@ -335,6 +424,12 @@
 		[{
 			"test_type": "BaseThreatened",
 			"boolean": false
+		},
+		{
+			"test_type": "UnitCountOnPlanet",
+			"unit_type_string0": "Air & Factory",
+			"compare0": "<",
+			"value0": 1
 		},
 		{
 			"test_type": "UnitCountOnPlanet",
@@ -353,10 +448,101 @@
 		"instance_count": 1,
 		"shared_instance_count": "LandScout",
 		"priority": 97,
-		"builders": [
-			"BasicVehicleFactory", 
-			"BasicBotFactory"
-			],
+		"builders": ["BasicVehicleFactory"],
+		"build_conditions": [[{
+			"test_type": "AloneOnPlanet",
+			"boolean": false
+		},
+		{
+			"test_type": "CanAffordBuildDemand"
+		},
+		{
+			"test_type": "UnitRatioOnPlanet",
+			"unit_type_string0": "Land & Scout",
+			"unit_type_string1": "(Tank | Bot) - Fabber",
+			"compare0": "<",
+			"value0": 0.1
+		}],
+		[{
+			"test_type": "AloneOnPlanet",
+			"boolean": true
+		},
+		{
+			"test_type": "CanAffordBuildDemand"
+		},
+		{
+			"test_type": "UnitRatioOnPlanet",
+			"unit_type_string0": "Land & Scout",
+			"unit_type_string1": "(Tank | Bot) - Fabber",
+			"compare0": "<",
+			"value0": 0.1
+		},
+		{
+			"test_type": "OtherPlanetNeedsLandUnitAssistance",
+			"boolean": true
+		},
+		{
+			"test_type": "UnitCountOnPlanet",
+			"unit_type_string0": "Structure & Teleporter",
+			"compare0": ">",
+			"value0": 0
+		}]]
+	},
+	{
+		"name": "Land Bot Scout - Intel",
+		"to_build": "BasicAssaultBot",
+		"instance_count": 1,
+		"shared_instance_count": "BasicAssaultBot",
+		"priority": 98,
+		"builders": ["BasicBotFactory"],
+		"build_conditions": [[{
+			"test_type": "BaseThreatened",
+			"boolean": false
+		},
+		{
+			"test_type": "UnitCountOnPlanet",
+			"unit_type_string0": "Air & Factory",
+			"compare0": "<",
+			"value0": 1
+		},
+		{
+			"test_type": "UnitCountPerPlanetRadius",
+			"unit_type_string0": "Land & Scout",
+			"compare0": "<",
+			"value0": 400
+		},
+		{
+			"test_type": "HaveFullPlanetIntel",
+			"boolean": false
+		}],
+		[{
+			"test_type": "BaseThreatened",
+			"boolean": false
+		},
+		{
+			"test_type": "UnitCountOnPlanet",
+			"unit_type_string0": "Air & Factory",
+			"compare0": "<",
+			"value0": 1
+		},
+		{
+			"test_type": "UnitCountOnPlanet",
+			"unit_type_string0": "Land & Scout",
+			"compare0": "<",
+			"value0": 1
+		},
+		{
+			"test_type": "HaveFullPlanetIntel",
+			"boolean": false
+		}]]
+	},
+	{
+		"name": "Land Bot Scout",
+		"to_build": "BasicAssaultBot",
+		"instance_count": 1,
+		"shared_instance_count": "BasicAssaultBot",
+		"priority": 97,
+		"builders": ["BasicBotFactory"],
 		"build_conditions": [[{
 			"test_type": "AloneOnPlanet",
 			"boolean": false
@@ -749,6 +935,38 @@
 	{
 		"name": "Advanced Assault Bot",
 		"to_build": "AdvancedAssaultBot",
+		"instance_count": -1,
+		"max_num_assisters": 15,
+		"priority": 199,
+		"builders": ["AdvancedBotFactory"],
+		"build_conditions": [[{
+			"test_type": "AloneOnPlanet",
+			"boolean": false
+		},
+		{
+			"test_type": "CanAffordBuildDemand"
+		}],
+		[{
+			"test_type": "AloneOnPlanet",
+			"boolean": true
+		},
+		{
+			"test_type": "CanAffordBuildDemand"
+		},
+		{
+			"test_type": "OtherPlanetNeedsLandUnitAssistance",
+			"boolean": true
+		},
+		{
+			"test_type": "UnitCountOnPlanet",
+			"unit_type_string0": "Structure & Teleporter",
+			"compare0": ">",
+			"value0": 0
+		}]]
+	},
+	{
+		"name": "Advanced Boom Bot",
+		"to_build": "BombBot",
 		"instance_count": -1,
 		"max_num_assisters": 15,
 		"priority": 199,

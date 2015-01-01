@@ -1273,7 +1273,7 @@
       "builders": [
         "AnyBasicFabber"
       ], 
-      "instance_count": 1, 
+      "instance_count": 3, 
       "name": "Umbrella - Threat", 
       "placement_rules": {
         "buffer": 2, 
@@ -1325,7 +1325,7 @@
         ]
       ], 
       "builders": [
-        "AnyAdvancedFabber"
+        "AnyBasicFabber"
       ], 
       "instance_count": 1, 
       "name": "Anti Nuke Silo", 
@@ -1412,7 +1412,7 @@
         ]
       ], 
       "builders": [
-        "AnyAdvancedFabber"
+        "AnyBasicFabber"
       ], 
       "instance_count": 1, 
       "max_num_assisters": 12, 
@@ -1441,6 +1441,124 @@
       "priority": 386, 
       "shared_instance_count": "AntiNukeSilo", 
       "to_build": "AntiNukeSilo"
+    },
+    {
+      "build_conditions": [
+        [
+          {
+            "string0": "TML", 
+            "test_type": "CanAffordPotentialDrain"
+          }, 
+          {
+            "compare0": ">", 
+            "string0": "Orbital", 
+            "test_type": "SystemThreat", 
+            "value0": 0
+          }, 
+          {
+            "compare0": "<", 
+            "test_type": "UnitCountInBase", 
+            "unit_type_string0": "Structure & OrbitalDefense", 
+            "value0": 3
+          }, 
+          {
+            "compare0": ">=", 
+            "test_type": "UnitCountInBase", 
+            "unit_type_string0": "Structure & ((EnergyProduction & Advanced) | Factory)", 
+            "value0": 3
+          }, 
+          {
+            "string0": "TML", 
+            "test_type": "CanFindPlaceToBuild"
+          }
+        ]
+      ], 
+      "builders": [
+        "AnyAdvancedFabber"
+      ], 
+      "instance_count": 1, 
+      "name": "TML - Anti-orbital", 
+      "placement_rules": {
+        "buffer": 2, 
+        "placement_type": "FromMainBaseCenter", 
+        "unit_count_rules": [
+          {
+            "alliance": "Ally", 
+            "compare_type": ">=", 
+            "count": 3, 
+            "range": 100, 
+            "unit_type_string": "Structure & ((EnergyProduction & Advanced) | Factory)"
+          }, 
+          {
+            "alliance": "Ally", 
+            "compare_type": "<", 
+            "count": 1, 
+            "range": 150, 
+            "unit_type_string": "Structure & OrbitalDefense"
+          }
+        ]
+      }, 
+      "priority": 375, 
+      "to_build": "TML"
+    }, 
+    {
+      "build_conditions": [
+        [
+          {
+            "string0": "TML", 
+            "test_type": "CanAffordPotentialDrain"
+          }, 
+          {
+            "compare0": ">", 
+            "string0": "Orbital", 
+            "test_type": "BaseThreat", 
+            "value0": 0
+          }, 
+          {
+            "compare0": "<", 
+            "test_type": "UnitCountInBase", 
+            "unit_type_string0": "Structure & OrbitalDefense", 
+            "value0": 1
+          }, 
+          {
+            "compare0": ">=", 
+            "test_type": "UnitCountInBase", 
+            "unit_type_string0": "Structure & ((EnergyProduction & Advanced) | Factory)", 
+            "value0": 3
+          }, 
+          {
+            "string0": "TML", 
+            "test_type": "CanFindPlaceToBuild"
+          }
+        ]
+      ], 
+      "builders": [
+        "AnyAdvancedFabber"
+      ], 
+      "instance_count": 1, 
+      "name": "TML - Orbital Threat", 
+      "placement_rules": {
+        "buffer": 2, 
+        "placement_type": "FromMainBaseCenter", 
+        "unit_count_rules": [
+          {
+            "alliance": "Ally", 
+            "compare_type": ">=", 
+            "count": 3, 
+            "range": 100, 
+            "unit_type_string": "Structure & ((EnergyProduction & Advanced) | Factory)"
+          }, 
+          {
+            "alliance": "Ally", 
+            "compare_type": "<", 
+            "count": 1, 
+            "range": 150, 
+            "unit_type_string": "Structure & OrbitalDefense"
+          }
+        ]
+      }, 
+      "priority": 380, 
+      "to_build": "TML"
     }
   ]
 }

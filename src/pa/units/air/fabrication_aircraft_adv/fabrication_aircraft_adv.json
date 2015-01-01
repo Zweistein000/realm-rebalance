@@ -3,7 +3,7 @@
   "display_name": "Advanced Fab Aircraft",
   "description": "Fabrication Support Plane: Able to repair, reclaim & build Advanced structures. Weak vs Anti-Air.",
   "max_health": 250,
-  "build_metal_cost": 375,
+  "build_metal_cost": 400,
   "buildable_types": "Land & Structure & Advanced - Factory | Factory & Advanced & Air | FabAdvBuild - Bot - Tank - Naval",
   "attachable": {
     "offsets": {

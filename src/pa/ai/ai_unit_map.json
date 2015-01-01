@@ -177,6 +177,9 @@
     "Battleship": {
       "spec_id": "/pa/units/surfacenaval_units/battleship/battleship.json"
     }, 
+    "BombBot": {
+      "spec_id": "/pa/units/land_bots/bot_bomb/bot_bomb.json"
+    }, 
     "Commander": {
       "unit_types": "Commander"
     }, 
@@ -209,6 +212,9 @@
     }, 
     "NukeMissile": {
       "spec_id": "/pa/units/land_combat/nuke_launcher/nuke_launcher_strat_ammo.json"
+    }, 
+    "TacNukeMissile": {
+      "spec_id": "/pa/units/land_combat/nuke_launcher/nuke_launcher_tac_ammo.json"
     }, 
     "NukeSilo": {
       "spec_id": "/pa/units/land_combat/nuke_launcher/nuke_launcher.json"
