@@ -64,9 +64,9 @@
         }
     },
     "model": {
-        "filename": "/pa/units/land/land_scout/land_scout.papa",
+        "filename": "/pa/units/land_vehicles/land_scout/vehicle_scout.papa",
         "animations": {
-            "drive": "/pa/units/land/land_scout/land_scout_anim_drive.papa"
+            "drive": "/pa/units/land_vehicles/land_scout/vehicle_scout_anim_drive.papa"
         },
         "animtree": "/pa/anim/anim_trees/land_scout_anim_tree.json",
         "arrows": 5
