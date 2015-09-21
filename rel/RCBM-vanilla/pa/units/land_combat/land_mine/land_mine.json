@@ -1,0 +1,74 @@
+{
+  "display_name": "Land Mine",
+  "description": "Heavy-Hitter Suicide Unit: An invisible explosive with proximity sensor. Weak vs Long-Range & Radar",
+  "display_group": 50,
+  "display_index": 40,
+  "max_health": 5,
+  "build_metal_cost": 50,
+  "wreckage_health_frac": 0,
+  "spawn_layers": "WL_LandHorizontal",
+  "area_build_type": "Sphere",
+  "area_build_separation": 8,
+  "unit_types": [
+    "UNITTYPE_Basic",
+    "UNITTYPE_Land",
+    "UNITTYPE_Defense",
+    "UNITTYPE_Bomb",
+    "UNITTYPE_CombatFabBuild",
+    "UNITTYPE_CombatFabAdvBuild"
+  ],
+  "physics": {
+    "type": "Structure",
+    "radius": 0.25,
+    "push_class": 0,
+    "air_friction": 1,
+    "allow_pushing": false,
+    "ignore_collisions": true
+  },
+  "recon": {
+    "observable": {
+      "layer": "surface_and_air",
+      "ignore_sight": true,
+      "ignore_radar": true
+    },
+    "observer": {
+      "items": [
+        {
+          "layer": "surface_and_air",
+          "channel": "radar",
+          "shape": "sphere",
+          "radius": 5
+        }
+      ]
+    }
+  },
+  "tools": [
+    {
+      "spec_id": "/pa/units/land_combat/land_mine/land_mine_tool_weapon.json",
+      "aim_bone": "bone_root",
+      "muzzle_bone": "bone_root"
+    }
+  ],
+  "model": [
+    {
+      "layer": "WL_LandHorizontal",
+      "filename": "/pa/units/land/land_mine/land_mine.papa"
+    }
+  ],
+  "events": {
+    "build_complete": {
+      "audio_cue": "/SE/Build_Complete/fab"
+    },
+    "died": {
+      "audio_cue": "/SE/Impacts/shell_artillery",
+      "effect_spec": "/pa/effects/specs/default_explosion.pfx",
+      "effect_scale": 1.5
+    }
+  },
+  "mesh_bounds": [
+    4,
+    4,
+    1
+  ],
+  "TEMP_texelinfo": 2.37699
+}

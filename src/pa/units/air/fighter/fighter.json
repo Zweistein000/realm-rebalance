@@ -1,95 +1,109 @@
 {
-  "base_spec": "/pa/units/air/base_flyer/base_flyer.json",
-  "display_name": "Hummingbird",
-  "description": "Multi-Purpose Raider Plane: A fighter equipped with a gattling laser. Weak vs Riot-control & Heavy",
-  "max_health": 35,
-  "build_metal_cost": 300,
-  "unit_types": [
-    "UNITTYPE_Fighter",
-    "UNITTYPE_Air",
-    "UNITTYPE_Mobile",
-    "UNITTYPE_Basic",
-    "UNITTYPE_FactoryBuild"
-  ],
-  "guard_radius": 200,
-  "guard_layer": "WL_Air",
-  "navigation": {
-    "type": "air",
-    "acceleration": 180,
-    "brake": 45,
-    "move_speed": 90,
-    "turn_speed": 75,
-    "aggressive_distance": 40,
-    "bank_factor": 10
-  },
-  "physics": {
-    "radius": 6,
-    "gravity_scalar": 1,
-    "push_class": 2
-  },
-  "recon": {
-    "observer": {
-      "items": [
-        {
-          "layer": "surface_and_air",
-          "channel": "sight",
-          "shape": "capsule",
-          "radius": 120
+    "base_spec": "/pa/units/air/base_flyer/base_flyer.json",
+    "display_name": "Hummingbird",
+    "description": "Multi-Purpose Raider Plane: A fighter equipped with a gattling laser. Weak vs Riot-control & Heavy",
+    "max_health": 35,
+    "build_metal_cost": 300,
+    "unit_types": [
+        "UNITTYPE_Fighter",
+        "UNITTYPE_Air",
+        "UNITTYPE_Mobile",
+        "UNITTYPE_Offense",
+        "UNITTYPE_Basic",
+        "UNITTYPE_FactoryBuild"
+    ],
+    "transportable": {
+        "size": 1
+    },
+    "guard_layer": "WL_Air",
+    "navigation": {
+        "type": "air",
+        "acceleration": 180,
+        "brake": 45,
+        "move_speed": 90,
+        "turn_speed": 75,
+        "aggressive_distance": 40,
+        "bank_factor": 10
+    },
+    "physics": {
+        "radius": 6,
+        "gravity_scalar": 1
+    },
+    "recon": {
+        "observer": {
+            "items": [
+                {
+                    "layer": "surface_and_air",
+                    "channel": "sight",
+                    "shape": "capsule",
+                    "radius": 150
+                },
+                {
+                    "layer": "underwater",
+                    "channel": "radar",
+                    "shape": "capsule",
+                    "radius": 150
+                }
+            ]
         }
-      ]
-    }
-  },
-  "model": {
-    "filename": "/pa/units/air/fighter/fighter.papa",
-    "arrows": 5
-  },
-  "tools": [
-    {
-      "spec_id": "/pa/units/air/fighter/fighter_tool_weapon.json",
-      "aim_bone": "bone_root",
-      "muzzle_bone": "bone_root"
-    }
-  ],
-  "events": {
-    "build_complete": {
-      "audio_cue": "/SE/Build_Complete/air"
     },
-    "fired": {
-      "audio_cue": "/SE/Weapons/veh/land_scout_fire"
+    "model": {
+        "filename": "/pa/units/air/fighter/fighter.papa",
+        "arrows": 5
     },
-    "died": {
-      "audio_cue": "/SE/Death/Air",
-      "effect_spec": "/pa/effects/specs/default_explosion.pfx"
-    }
-  },
+    "tools": [
+        {
+            "spec_id": "/pa/units/air/fighter/fighter_tool_weapon.json",
+            "aim_bone": "bone_root",
+            "muzzle_bone": "bone_root"
+        }
+    ],
+    "events": {
+        "build_complete": {
+            "audio_cue": "/SE/Build_Complete/air"
+        },
+        "fired": {
+            "audio_cue": "/SE/Weapons/air/fighter_fire"
+        },
+        "died": {
+            "audio_cue": "/SE/Death/Air",
+            "effect_spec": "/pa/units/air/base_flyer/base_flyer_death.pfx",
+            "effect_scale": 0.85
+        }
+    },
     "audio": {
         "loops": {
             "move": {
                 "cue": "/SE/Movement/air/air_fighter_loop",
                 "flag": "vel_changed",
-                "should_start_func": "is_moving",
+                "should_start_func": "is_moving_laterally",
                 "should_stop_func": "is_not_moving"
             }
         },
         "selection_response": {
-            "cue": "/SE/Selection/air/fighter"
+            "cue": "/SE/Selection/air/fighter",
+            "effect_spec": "/pa/units/air/base_flyer/base_flyer_death.pfx",
+            "effect_scale": 1
         }
     },
-  "fx_offsets": [
-    {
-      "type": "moving_forward",
-      "filename": "/pa/units/air/fighter/fighter_jets.pfx",
-      "offset": [
-        0,
-        2.9,
-        0.836
-      ]
-    }
-  ],
-  "TEMP_texelinfo": 6.1803,
-  "mesh_bounds": [
-    9,
-    6.5,
-    3.1
-  ]
+    "fx_offsets": [
+        {
+            "type": "moving_forward",
+            "filename": "/pa/units/air/fighter/fighter_jets.pfx",
+            "offset": [
+                0,
+                2.9,
+                0.836
+            ]
+        }
+    ],
+    "selection_icon": {
+        "diameter": 16
+    },
+    "TEMP_texelinfo": 6.1803,
+    "mesh_bounds": [
+        9,
+        6.5,
+        3.1
+    ]
 }

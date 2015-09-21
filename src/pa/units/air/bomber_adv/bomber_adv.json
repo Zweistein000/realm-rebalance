@@ -1,100 +1,104 @@
 {
-  "base_spec": "/pa/units/air/base_flyer/base_flyer.json",
-  "display_name": "Hornet",
-  "description": "Fast Heavy-Hitter Plane: A bomber armed with a single high-powered bomb. Weak vs Anti-Air & Suppression",
-  "max_health": 325,
-  "build_metal_cost": 1250,
-  "consumption": {
-    "energy": 500
-  },
-  "energy_efficiency_requirement": 0.9,
-  "unit_types": [
-    "UNITTYPE_Bomber",
-    "UNITTYPE_Mobile",
-    "UNITTYPE_Air",
-    "UNITTYPE_Advanced",
-    "UNITTYPE_FactoryBuild"
-  ],
-  "guard_radius": 100,
-  "guard_layer": "WL_AnySurface",
-  "navigation": {
-    "aggressive_height": 100,
-    "turn_speed": 45,
-    "aggressive_distance": 10,
-    "dodge_multiplier": 0,
-    "type": "air",
-    "dodge_radius": 0,
-    "wobble_factor": 0.01,
-    "brake": 20,
-    "move_speed": 80,
-    "wobble_speed": 0.01,
-    "acceleration": 50
-  },
-  "physics": {
-    "radius": 9,
-    "gravity_scalar": 1,
-    "push_class": 2,
-    "push_sideways": false,
-    "allow_pushing": false,
-    "air_friction": 0.2
-  },
-  "recon": {
-    "observable": {
+    "base_spec": "/pa/units/air/base_flyer/base_flyer.json",
+    "display_name": "Hornet",
+    "description": "Fast Heavy-Hitter Plane: A bomber armed with a single high-powered bomb. Weak vs Anti-Air & Suppression",
+    "max_health": 325,
+    "build_metal_cost": 1250,
+	"consumption": {
+        "energy": 500
+    },
+    "energy_efficiency_requirement": 0.9,
+    "unit_types": [
+        "UNITTYPE_Bomber",
+        "UNITTYPE_Mobile",
+        "UNITTYPE_Offense",
+        "UNITTYPE_Air",
+        "UNITTYPE_Advanced",
+        "UNITTYPE_FactoryBuild"
+    ],
+    "transportable": {
+        "size": 1
+    },
+    "guard_layer": "WL_AnySurface",
+    "navigation": {
+        "type": "air",
+        "acceleration": 50,
+        "brake": 20,
+        "move_speed": 80,
+        "turn_speed": 45,
+        "dodge_radius": 0,
+        "dodge_multiplier": 0,
+        "aggressive_distance": 10,
+        "aggressive_height": 100,
+        "bank_factor": 1,
+        "wobble_factor": 0.01,
+        "wobble_speed": 0.01
+    },
+    "physics": {
+        "radius": 9,
+        "gravity_scalar": 1,
+        "push_sideways": false,
+        "allow_pushing": false,
+        "air_friction": 1
+    },
+    "recon": {
+	    "observable": {
       "layer": "surface_and_air",
       "ignore_radar": true,
 	  "uses_energy": true
     },
-    "observer": {
-      "items": [
-        {
-          "layer": "surface_and_air",
-          "channel": "sight",
-          "shape": "capsule",
-          "radius": 120
+        "observer": {
+            "items": [
+                {
+                    "layer": "surface_and_air",
+                    "channel": "sight",
+                    "shape": "capsule",
+                    "radius": 120
+                }
+            ]
         }
-      ]
-    }
-  },
-  "model": {
-    "filename": "/pa/units/air/bomber_adv/bomber_adv.papa",
-    "arrows": 5
-  },
-  "tools": [
-    {
-      "spec_id": "/pa/units/air/bomber_adv/bomber_adv_tool_weapon.json",
-      "aim_bone": "bone_root",
-      "muzzle_bone": "bone_root"
-    }
-  ],
-  "events": {
-    "build_complete": {
-      "audio_cue": "/SE/Build_Complete/air"
     },
-    "fired": {
-      "audio_cue": "/SE/Weapons/air/bomber_fire"
+    "model": {
+        "filename": "/pa/units/air/bomber_adv/bomber_adv.papa",
+        "arrows": 5
     },
-    "died": {
-      "audio_cue": "/SE/Death/Air",
-      "effect_spec": "/pa/units/air/missile_nuke/missile_nuke_implosion.pfx"
-    }
-  },
-  "fx_offsets": [
-    {
-      "filename": "/pa/units/air/bomber_adv/bomber_adv_jets.pfx",
-      "type": "moving_forward",
-      "offset": [
-        0,
-        4.21,
-        2.658
-      ]
-    }
-  ],
+    "tools": [
+        {
+            "spec_id": "/pa/units/air/bomber_adv/bomber_adv_tool_weapon.json",
+            "aim_bone": "bone_root",
+            "muzzle_bone": "bone_root"
+        }
+    ],
+    "events": {
+        "build_complete": {
+            "audio_cue": "/SE/Build_Complete/air"
+        },
+        "fired": {
+            "audio_cue": "/SE/Weapons/air/bomber_T2_fire"
+        },
+        "died": {
+            "audio_cue": "/SE/Death/Air",
+            "effect_spec": "/pa/units/air/base_flyer/base_flyer_death_t2.pfx",
+            "effect_scale": 1
+        }
+    },
+    "fx_offsets": [
+        {
+            "type": "moving_forward",
+            "filename": "/pa/units/air/bomber_adv/bomber_adv_jets.pfx",
+            "offset": [
+                0,
+                0,
+                0
+            ]
+        }
+    ],
     "audio": {
         "loops": {
             "move": {
                 "cue": "/SE/Movement/air/air_bomber_T2_loop",
                 "flag": "vel_changed",
-                "should_start_func": "is_moving",
+                "should_start_func": "is_moving_laterally",
                 "should_stop_func": "is_not_moving"
             }
         },
@@ -102,10 +106,13 @@
             "cue": "/SE/Selection/air/bomber_T2"
         }
     },
-  "TEMP_texelinfo": 11.3221,
-  "mesh_bounds": [
-    23,
-    9.5,
-    4.8
-  ]
+    "selection_icon": {
+        "diameter": 32
+    },
+    "TEMP_texelinfo": 11.3221,
+    "mesh_bounds": [
+        23,
+        9.5,
+        4.8
+    ]
 }

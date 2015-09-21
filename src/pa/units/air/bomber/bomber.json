@@ -1,81 +1,95 @@
 {
-	"base_spec": "/pa/units/air/base_flyer/base_flyer.json",
-	"display_name": "Bumblebee",
+    "base_spec": "/pa/units/air/base_flyer/base_flyer.json",
+    "display_name": "Bumblebee",
 	"description": "Salvo Suppression Plane: A carpet bomber with wide area attack. Weak vs Air & Anti-Air.",
-	"max_health": 250,
-	"build_metal_cost": 500,
-	"unit_types": ["UNITTYPE_Bomber",
-	"UNITTYPE_Mobile",
-	"UNITTYPE_Air",
-	"UNITTYPE_Basic",
-	"UNITTYPE_FactoryBuild"],
-	"guard_radius": 100,
-	"guard_layer": "WL_AnySurface",
-    "navigation": {
-		"aggressive_height": 100,
-		"aggressive_distance": 250,
-		"turn_speed": 55,
-		"type": "air",
-		"dodge_multiplier": 0,
-		"dodge_radius": 0,
-		"wobble_factor": 0.05,
-		"wobble_speed": 0.1,
-		"acceleration": 50,
-		"move_speed": 60,
-		"brake": 20
+    "max_health": 250,
+    "build_metal_cost": 500,
+    "unit_types": [
+        "UNITTYPE_Bomber",
+        "UNITTYPE_Mobile",
+        "UNITTYPE_Offense",
+        "UNITTYPE_Air",
+        "UNITTYPE_Basic",
+        "UNITTYPE_FactoryBuild"
+    ],
+    "transportable": {
+        "size": 1
     },
-	"physics": {
-		"radius": 6,
-		"gravity_scalar": 1,
-		"push_class": 2,
-		"push_sideways": false,
-		"allow_pushing": false,
-		"air_friction": 0.2
-	},
-	"recon": {
-		"observer": {
-			"items": [{
-				"layer": "surface_and_air",
-				"channel": "sight",
-				"shape": "capsule",
-				"radius": 100
-			}]
-		}
-	},
-	"model": {
-		"filename": "/pa/units/air/bomber/bomber.papa",
-		"arrows": 5
-	},
-	"tools": [{
-		"spec_id": "/pa/units/air/bomber/bomber_tool_weapon.json",
-		"aim_bone": "bone_root",
-		"muzzle_bone": "bone_root"
-	}],
-	"events": {
-		"build_complete": {
-			"audio_cue": "/SE/Build_Complete/air"
-		},
-		"fired": {
-			"audio_cue": "/SE/Weapons/air/bomber_fire"
-		},
-		"died": {
-			"audio_cue": "/SE/Death/Air",
-			"effect_spec": "/pa/units/air/missile_nuke/missile_nuke_implosion.pfx"
-		}
-	},
-	"fx_offsets": [{
-		"type": "moving_forward",
-		"filename": "/pa/units/air/bomber/bomber_jets.pfx",
-		"offset": [0,
-		2.32,
-		1.393]
-	}],
+    "guard_radius": 100,
+    "guard_layer": "WL_AnySurface",
+    "navigation": {
+        "type": "air",
+        "acceleration": 50,
+        "brake": 20,
+        "move_speed": 60,
+        "turn_speed": 55,
+        "dodge_radius": 0,
+        "dodge_multiplier": 0,
+        "aggressive_distance": 250,
+        "aggressive_height": 100,
+        "wobble_factor": 0.05,
+        "wobble_speed": 0.1
+    },
+    "physics": {
+        "radius": 6,
+        "gravity_scalar": 1,
+        "push_sideways": false,
+        "allow_pushing": false,
+        "air_friction": 1
+    },
+    "recon": {
+        "observer": {
+            "items": [
+                {
+                    "layer": "surface_and_air",
+                    "channel": "sight",
+                    "shape": "capsule",
+                    "radius": 200
+                }
+            ]
+        }
+    },
+    "maintain_priority_target": false,
+    "model": {
+        "filename": "/pa/units/air/bomber/bomber.papa",
+        "arrows": 5
+    },
+    "tools": [
+        {
+            "spec_id": "/pa/units/air/bomber/bomber_tool_weapon.json",
+            "aim_bone": "bone_root",
+            "muzzle_bone": "bone_root"
+        }
+    ],
+    "events": {
+        "build_complete": {
+            "audio_cue": "/SE/Build_Complete/air"
+        },
+        "fired": {
+            "audio_cue": "/SE/Weapons/air/bomber_fire"
+        },
+        "died": {
+            "audio_cue": "/SE/Death/Air",
+            "effect_scale": 0.75
+        }
+    },
+    "fx_offsets": [
+        {
+            "type": "moving_forward",
+            "filename": "/pa/units/air/bomber/bomber_jets.pfx",
+            "offset": [
+                0,
+                2.32,
+                1.393
+            ]
+        }
+    ],
     "audio": {
         "loops": {
             "move": {
                 "cue": "/SE/Movement/air/air_bomber_loop",
                 "flag": "vel_changed",
-                "should_start_func": "is_moving",
+                "should_start_func": "is_moving_laterally",
                 "should_stop_func": "is_not_moving"
             }
         },
@@ -83,8 +97,13 @@
             "cue": "/SE/Selection/air/bomber"
         }
     },
-	"TEMP_texelinfo": 10.4258,
-	"mesh_bounds": [14,
-	7.5,
-	2.6]
+    "selection_icon": {
+        "diameter": 23
+    },
+    "TEMP_texelinfo": 10.4258,
+    "mesh_bounds": [
+        14,
+        7.5,
+        2.6
+    ]
 }

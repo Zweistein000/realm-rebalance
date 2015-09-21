@@ -13,6 +13,8 @@
   "pitch_range": 85,
   "auto_attack": true,
   "spread_fire": true,
+    "carpet_fire": true,
+    "carpet_wait_for_full_ammo": true,
   "target_priorities": [
     "Orbital"
   ],

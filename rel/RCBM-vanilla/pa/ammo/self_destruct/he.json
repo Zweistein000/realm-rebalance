@@ -1,0 +1,12 @@
+{
+  "ammo_type": "PBAOE", 
+  "damage": 350, 
+  "damage_volume": {
+    "initial_radius": 30
+  }, 
+  "impact_decals": [
+    "/pa/effects/specs/scorch_b_01.json"
+  ], 
+  "splash_damages_allies": false, 
+  "splash_radius": 30
+}

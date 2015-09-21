@@ -100,7 +100,8 @@ function BuildHotkeyModel() {
             "/pa/units/air/fighter_antiair/fighter_antiair.json": ["advAir", 11],
             "/pa/units/air/bomber_adv/bomber_adv.json": ["advAir", 12],
             "/pa/units/air/gunship/gunship.json": ["advAir", 13],
-
+            "/pa/units/air/bomber_heavy/bomber_heavy.json": ["advAir", 14],
+            "/pa/units/air/support_platform/support_platform.json": ["advAir", 15],
 
             "/pa/units/surfacenaval_units/fabrication_ship/fabrication_ship.json": ["naval", 10],
             "/pa/units/surfacenaval_units/sea_scout/sea_scout.json": ["naval", 11],
